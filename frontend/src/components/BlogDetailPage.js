@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 const BlogDetailPage = () => {
-  const { blogId } = useParams(); // Get the blog ID from the URL
+  const { blogId } = useParams(); 
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
@@ -29,12 +29,12 @@ const BlogDetailPage = () => {
 
   return (
     <div className="p-6 max-w-4xl mx-auto bg-gray-50 shadow-md rounded-lg">
-      {/* Blog Header */}
+    
       <div className="mb-8 text-center">
         <h1 className="text-4xl font-bold text-gray-800">{blog.topic}</h1>
       </div>
 
-      {/* Blog Image */}
+     
       <div className="mb-8">
         <img
           src={blog.image}
@@ -43,7 +43,7 @@ const BlogDetailPage = () => {
         />
       </div>
 
-      {/* Blog Details */}
+     
       <div className="text-gray-700">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">{blog.description}</h2>
         <p className="leading-relaxed text-lg">{blog.content}</p>

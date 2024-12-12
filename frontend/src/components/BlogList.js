@@ -31,7 +31,7 @@ const BlogList = () => {
     description: '',
   });
 
-  // Fetch blogs
+  
   const fetchBlogs = async () => {
     try {
       const response = await axios.get('http://localhost:8000/api/blogs');
@@ -41,13 +41,13 @@ const BlogList = () => {
     }
   };
 
-  // Handle form input change
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Open update modal and populate form data
+
   const handleEditClick = (blog) => {
     setEditingBlog(blog);
     setFormData({
@@ -58,7 +58,7 @@ const BlogList = () => {
     setIsUpdateModalVisible(true);
   };
 
-  // Submit update blog form
+
   const handleUpdateFormSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -80,7 +80,7 @@ const BlogList = () => {
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-800 text-center mb-6">My Articals</h1>
 
-        {/* Blog List */}
+     
         <div className="space-y-4">
           {blogs.length > 0 ? (
             blogs.map((blog) => (

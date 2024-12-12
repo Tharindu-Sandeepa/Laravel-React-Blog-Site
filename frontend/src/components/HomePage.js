@@ -6,7 +6,7 @@ const HomePage = () => {
   const [blogs, setBlogs] = useState([]);
   const navigate = useNavigate();
 
-  // Fetch blogs
+  
   const fetchBlogs = async () => {
     try {
       const response = await axios.get('http://localhost:8000/api/blogs');
@@ -27,12 +27,12 @@ const HomePage = () => {
   return (
     <div className="bg-gradient-to-b from-blue-600 to-green-600 min-h-screen p-6">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+       
         <h1 className="text-4xl font-extrabold text-center text-white mb-10">
           Explore the Latest Blogs
         </h1>
 
-        {/* Blog Cards */}
+       
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {blogs.length > 0 ? (
             blogs.map((blog) => (
@@ -41,13 +41,13 @@ const HomePage = () => {
                 onClick={() => handleCardClick(blog.id)}
                 className="bg-white bg-opacity-70 backdrop-blur-lg rounded-lg shadow-lg transform transition-transform hover:-translate-y-2 cursor-pointer"
               >
-                {/* Blog Image */}
+               
                 <img
                   src={blog.image}
                   alt={blog.topic}
                   className="w-full h-52 object-cover rounded-t-lg"
                 />
-                {/* Blog Details */}
+             
                 <div className="p-4">
                   <h3 className="text-xl font-bold text-gray-800 truncate">{blog.topic}</h3>
                   <p className="text-gray-600 mt-2 text-sm line-clamp-2">
